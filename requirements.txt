@@ -1,0 +1,16 @@
+# PyTorch with CUDA 12.4 (install separately):
+# pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
+
+# ML models
+ultralytics>=8.3.0
+# sam2 installed separately from git in setup scripts
+
+# Server
+fastapi>=0.118.0
+uvicorn[standard]>=0.34.0
+python-multipart>=0.0.20
+
+# Image processing
+opencv-python-headless>=4.10.0
+numpy>=1.26.0
+Pillow>=10.0.0
