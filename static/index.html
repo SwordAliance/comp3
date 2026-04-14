@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>COMP2</title>
+  <link rel="stylesheet" href="/static/styles.css?v=2">
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="logo">comp2</a>
+    <div class="tabs">
+      <a href="/" class="on">Съёмка</a>
+      <a href="/panel.html">Анализ</a>
+    </div>
+  </nav>
+
+  <div class="cam-page">
+    <div class="viewfinder" id="vf">
+      <video id="vid" autoplay playsinline muted></video>
+      <canvas id="cvs"></canvas>
+      <div class="corners"><i></i><i></i><i></i><i></i></div>
+      <div class="fl" id="fl"></div>
+      <div class="meta" id="meta">rec</div>
+      <div class="hint" id="hint">
+        <div class="ring"></div>
+        <p>включить камеру</p>
+      </div>
+    </div>
+
+    <div class="cam-btns">
+      <button class="side" id="flip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 4v6h6"/><path d="M23 20v-6h-6"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10"/><path d="M3.51 15A9 9 0 0 0 18.36 18.36L23 14"/></svg></button>
+      <button class="shutter" id="snap"></button>
+      <button class="side" id="gallery"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></button>
+    </div>
+    <input type="file" id="fileIn" accept="image/*" multiple hidden>
+
+    <div class="cam-count" id="cnt">0</div>
+  </div>
+
+  <div class="notif" id="ntf"></div>
+  <script src="/static/camera.js?v=2"></script>
+</body>
+</html>

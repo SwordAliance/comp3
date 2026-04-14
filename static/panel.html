@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>COMP2</title>
+  <link rel="stylesheet" href="/static/styles.css?v=2">
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="logo">comp2</a>
+    <div class="tabs">
+      <a href="/">Съёмка</a>
+      <a href="/panel.html" class="on">Анализ</a>
+    </div>
+  </nav>
+
+  <div class="panel">
+    <aside class="sidebar" id="sidebar">
+      <button class="sidebar-toggle" id="sidebarToggle" title="Свернуть"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <h3>галерея</h3>
+      <div class="thumbs" id="grid"></div>
+      <div class="acts">
+        <button id="all">Все</button>
+        <button id="del">Удалить</button>
+      </div>
+    </aside>
+
+    <div class="work">
+      <div class="canvas-area" id="area">
+        <div class="empty" id="emp">выберите фото</div>
+        <div class="canvas-wrap" id="cwrap" style="display:none">
+          <img id="pic" alt="">
+          <canvas id="overlay"></canvas>
+          <div class="dim-overlay" id="dim"></div>
+          <div class="progress-ring" id="pring">
+            <svg viewBox="0 0 80 80">
+              <circle cx="40" cy="40" r="34" class="ring-bg"/>
+              <circle cx="40" cy="40" r="34" class="ring-fill" id="rfill"/>
+            </svg>
+            <span class="ring-pct" id="rpct">0%</span>
+          </div>
+          <div class="stage-label" id="stageLabel"></div>
+        </div>
+      </div>
+
+      <div class="pipeline-stages" id="pipelineStages" style="display:none">
+        <div class="stages-grid">
+          <div class="stage-card" data-stage="original">
+            <img id="stageOriginal" alt="">
+            <span class="stage-title">оригинал</span>
+          </div>
+          <div class="stage-card" data-stage="segmented">
+            <img id="stageSegmented" alt="">
+            <span class="stage-title">сегментация</span>
+          </div>
+          <div class="stage-card" data-stage="heatmap">
+            <img id="stageHeatmap" alt="">
+            <span class="stage-title">хитмэп</span>
+          </div>
+          <div class="stage-card" data-stage="annotated">
+            <img id="stageAnnotated" alt="">
+            <span class="stage-title">аннотации</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-bar" id="bbar" style="display:none">
+        <button class="ghost-btn" id="rotateBtn" title="Повернуть на 90°"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6"/><path d="M21.34 13.72A10 10 0 1 1 18.57 4.93L21.5 8"/></svg> Повернуть</button>
+        <button class="ghost-btn" id="exportBtn" style="display:none">Экспорт отчёта</button>
+        <button class="fill-btn" id="analyzeBtn">Запустить анализ</button>
+      </div>
+
+      <div class="results-panel" id="results" style="display:none">
+        <h3>дефекты</h3>
+        <div class="defect-list" id="defectList"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="notif" id="ntf"></div>
+  <script src="/static/panel.js?v=2"></script>
+</body>
+</html>
